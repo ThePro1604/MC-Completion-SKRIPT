@@ -1,0 +1,24 @@
+on tab complete for "/za":
+	set tab completions for position 1 to "help", "stop", "summon", "setup" and "countdown"
+	if tab arg-1 = "summon":
+		set tab completions for position 2 to "list", "tank", "jumper", "speedy", "splasher", "floater", "teleporter" and "tower"
+	if tab arg-1 = "countdown":
+		set tab completions for position 2 to "60", "120", "180", "240" and "300"
+	if tab arg-1 = "setup":
+		set tab completions for position 2 to "on" and "off"
+
+on tab complete for "/hidenseek":
+	set tab completions for position 1 to "setgame", "delgame", "teleport", "start", "stop", "join" and "list"
+	if tab arg-1 = "join":
+		set tab completions for position 2 to {HNS.Name::*}
+	if tab arg-1 = "start":
+		set tab completions for position 2 to {HNS.Name::*}
+	if tab arg-1 = "delspawn":
+		set tab completions for position 2 to {HNS.Name::*}
+	if tab arg-1 = "teleport":
+		set tab completions for position 2 to {HNS.Name::*}
+	if tab arg-1 = "stop":
+		set tab completions for position 2 to {Started.HNS::*}
+
+on tab complete for "/toggle":
+	set tab completions for position 1 to "Status", "ZombieApocalypse", "HideAndSeek", "WorldReset" and "ThreeLives"
